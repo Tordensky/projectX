@@ -10,4 +10,5 @@ public class ProjectXActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
     }
+    
 }
