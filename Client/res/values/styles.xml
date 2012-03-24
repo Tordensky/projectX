@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style name="CustomTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:listViewStyle">@style/CustomListView</item>
+        <item name="android:textViewStyle">@style/CustomTextView</item>
+    </style>
+    <style name="CustomListView" parent="@android:style/Widget.ListView">
+        <item name="android:fastScrollEnabled">true</item>
+    </style>
+    <style name="CustomTextView" parent="@android:style/Widget.TextView">
+        <item name="android:typeface">serif</item>
+    </style>
+</resources>

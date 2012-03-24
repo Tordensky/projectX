@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutRegister"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:background="@color/darkgray"
+    android:orientation="vertical" >
+	
+    <TextView
+        android:id="@+id/regEmailView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="To registrate we need your email and a unique username. Your email will not be shared in any way."
+        android:textColor="@color/white" />
+    
+    <TextView
+        android:id="@+id/regEmailView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Email:"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/eTextRegEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress" >
+    </EditText>
+
+    <TextView
+        android:id="@+id/textRegUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/eTextRegUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name" >
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonConfirmReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="postRegisterInfo"
+        android:text="@string/register" />
+    
+	<TextView
+        android:id="@+id/textRegUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Already have an account?"
+        android:textColor="@color/white" />
+	
+	<Button
+        android:id="@+id/buttonToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:onClick="toLoginActivity"
+        android:text="@string/login" />
+
+</LinearLayout>
