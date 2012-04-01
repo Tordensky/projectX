@@ -8,11 +8,21 @@
     android:orientation="vertical" >
 	
     <TextView
+        android:id="@+id/textRegistration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:text="REGISTRATION"
+		android:textColor="@color/white" />
+    
+    <TextView
         android:id="@+id/regEmailView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="To registrate we need your email and a unique username. Your email will not be shared in any way."
+        android:layout_marginTop="30dp"        
+      	android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Your email is private and will not be shared"
         android:textColor="@color/white" />
     
     <TextView
