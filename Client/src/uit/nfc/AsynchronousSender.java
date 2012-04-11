@@ -13,6 +13,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import android.os.Handler;
+import android.util.Log;
  
 public class AsynchronousSender extends Thread {
  
@@ -32,6 +33,8 @@ public class AsynchronousSender extends Thread {
  
 	public void run() {
 		try {
+			Log.d("HTTPCLIENT", "LALALALALA!");
+
 			final HttpResponse response;
 			synchronized (httpClient) {
 				response = getClient().execute((HttpUriRequest) request);
@@ -50,7 +53,7 @@ public class AsynchronousSender extends Thread {
 		return httpClient;
 	}
 	
-	private String readResponse(HttpResponse response) {
+	public static String readResponse(HttpResponse response) {
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 			

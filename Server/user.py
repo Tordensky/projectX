@@ -35,7 +35,7 @@ class User:
 			print "Login"
 			
 			h = handler()
-			response = h.authenticate(data['Username'], sha1(data['Password']).hexdigest()))
+			response = h.authenticate(data['Username'], sha1(data['Password']).hexdigest())
 			
 			if(response != None):
 				web.header('Content-Type', 'application/json')

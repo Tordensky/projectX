@@ -1,19 +1,37 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="left|center"
+    android:paddingBottom="6dp"
+    android:paddingLeft="6dp"
+    android:paddingTop="6dp" >
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="3dip"
+        android:src="@drawable/ic_launcher" />
 
-    <TextView
-        android:id="@+id/gameRowUsername"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/gameRowLastAction"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5" />
-</LinearLayout><AbsoluteLayout ></Abs
+        <TextView
+            android:id="@+id/gameRowUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" 
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/gameRowLastAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5px"
+            android:layout_weight="0.5" 
+            android:textColor="#0099CC" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,36 @@
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout4"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textNewGame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="New game"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonFindByUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="findOpponentByUsername"
+            android:text="Find by username" />
+		
+        <Button
+            android:id="@+id/buttonFindByEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="findOpponentByEmail"
+            android:text="Find by email" />
+        
+        <Button
+            android:id="@+id/buttonFindRandom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="findOpponentRandom"
+            android:text="Find random opponent" />
+    </LinearLayout>

@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="fill_parent"
+        android:layout_height="50dip" android:background="#ffbbbbbb">
+        <TextView android:layout_width="wrap_content" android:layout_centerVertical="true"
+                android:textColor="@color/white" android:textSize="7pt"
+                android:textStyle="bold" android:layout_height="wrap_content"
+                android:text="The game" android:padding="8dp" />
+
+        <ImageView android:layout_width="1px" android:src="#ffffffff"
+                android:layout_height="wrap_content" android:text="@string/hello"
+                android:id="@+id/bordertwo" android:layout_toLeftOf="@+id/refresh"
+                android:layout_marginRight="12dip" android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true" />
+
+        <ImageView android:layout_width="25dip" android:src="@android:drawable/ic_menu_preferences"
+                android:layout_height="25dip" android:text=""
+                android:layout_marginRight="12dip" android:layout_centerVertical="true"
+                android:id="@+id/refresh" android:layout_toLeftOf="@+id/borderone"
+                android:scaleType="fitXY" />
+
+        <ImageView android:layout_width="wrap_content" android:src="#ffffffff" android:layout_height="wrap_content"
+                android:id="@+id/borderone" android:layout_alignParentTop="true"
+                android:layout_marginRight="12dip" android:layout_alignParentBottom="true"
+                android:layout_alignBottom="@+id/search" android:text="@string/hello"
+                android:layout_toLeftOf="@+id/search" />
+
+        <ImageView android:src="@android:drawable/ic_menu_add" android:text=""
+                android:layout_width="25dip" android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" android:id="@+id/search"
+                android:layout_marginRight="12dip" android:layout_height="25dip"
+                android:scaleType="fitXY" 
+                android:onClick="startNewGame"/>
+</RelativeLayout>
