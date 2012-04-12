@@ -65,7 +65,7 @@ public class GameActivity extends Activity {
 			@Override
 			public void onResponseReceived(HttpResponse response, String message) {
 				Log.i("Response", response.toString());
-				//ProgressDialogClass.dissMissProgressDialog();
+				ProgressDialogClass.dissMissProgressDialog();
 				confirmPlay(message);
 			}
 		};

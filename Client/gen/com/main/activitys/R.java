@@ -68,6 +68,7 @@ public final class R {
         public static final int signin=0x7f040003;
     }
     public static final class style {
+        public static final int CustomDialogView=0x7f060003;
         public static final int CustomListView=0x7f060001;
         public static final int CustomTextView=0x7f060002;
         public static final int CustomTheme=0x7f060000;

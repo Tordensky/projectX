@@ -28,8 +28,7 @@ public class TimerService extends Service {
 	public static final String BROADCAST_ACTION = "com.main.activitys.displayUpdate";
 	public static String URL = "URL";
 
-	public String gamesUrl = "http://restserver.herokuapp.com/games/";
-
+	public String gamesUrl;
 
 	public static final int INTERVAL = 10*1000;		// 10 seconds
 	private ScheduledExecutorService executor;
@@ -42,9 +41,6 @@ public class TimerService extends Service {
 		super.onCreate();
 
 		Log.d("SERVICE", "onCreate");
-		//
-		//		Bundle extras = getIntent().getExtras();
-		//		String gameId = extras.getString();
 
 		SharedPreferences loginSettings = getSharedPreferences(Login.PREFS_NAME, 0);
 		
@@ -80,8 +76,8 @@ public class TimerService extends Service {
 	@Override
 	public void onStart(Intent intent, int startId) {
 		super.onStart(intent, startId);
+		gamesUrl = intent.getExtras().getString(URL);
 		Log.d("SERVICE", "onStart");
-
 	}
 
 	@Override

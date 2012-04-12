@@ -41,7 +41,7 @@ public class RegisterActivity extends Activity {
 
 	private ResponseListener responseListener;
 	public SharedPreferences loginSettings;
-	private ProgressDialogClass progDialog;
+	public ProgressDialogClass progDialog;
 
 
 

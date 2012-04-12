@@ -29,6 +29,8 @@ public class AllGamesActivity extends ListActivity {
 	private static final String TAG = "BroadcastTest";
 	private Intent serviceintent;
 	private SharedPreferences loginSettings;
+	
+	public static int RANDOM_GAMEREQ_RESP = 1;
 
 	private SeparatedListAdapter adapter; 
 	ArrayList<Game> mineTurnList;
@@ -57,7 +59,7 @@ public class AllGamesActivity extends ListActivity {
 		
 		setListAdapter(adapter);
 		serviceintent = new Intent("com.main.service.TimerService");
-		serviceintent.putExtra(TimerService.URL, "http://restserver.herokuapp.com/games/" + Login.getUserId(loginSettings));
+		serviceintent.putExtra(TimerService.URL, "http://restserver.herokuapp.com/games/" + Login.getUsername(loginSettings));
 	}
 
 	@Override
@@ -87,10 +89,23 @@ public class AllGamesActivity extends ListActivity {
 
 		startActivity(gameIntent);
 	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    super.onActivityResult(requestCode, resultCode, data);
+	    Log.i("activityresult", "reeesponse");
+	    if(resultCode == RANDOM_GAMEREQ_RESP){
+	    	Game game = new Game();
+	    	game.setGameId("0");
+	    	game.setOpponentsUsername("Searching for opponent..");
+	    	game.setLastAction("");
+				opponentTurnList.add(game);
+	    }
+	}
 
 	public void startNewGame(View v){
 		Intent newGameIntent = new Intent(this, NewGameActivity.class);
-		startActivity(newGameIntent);
+		startActivityForResult(newGameIntent, RANDOM_GAMEREQ_RESP);
 	}
 
 

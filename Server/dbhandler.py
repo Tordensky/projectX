@@ -89,7 +89,23 @@ class handler:
 		except mdb.Error, e:
 			print "Error %d: %s" % (e.args[0],e.args[1])
 
-	
+
+	def findUserByEmail(self, email):
+		try:
+			cur = self.con.cursor(cursorclass=mdb.cursors.DictCursor)
+
+			cur.execute(""" SELECT UID
+							from users
+							WHERE email = %s LIMIT 1 """,
+							(email))
+
+			data = cur.fetchone()
+			return data
+
+		except mdb.Error, e:
+			print "Error %d: %s" % (e.args[0],e.args[1])
+
+
 	def findGamesByUsername(self, userName):
 		try:
 			cur = self.con.cursor(cursorclass=mdb.cursors.DictCursor)
@@ -131,12 +147,15 @@ class handler:
 			
 			cur.execute(""" LOCK TABLES searchingrandom WRITE""")
 			# deletes the first row if excist
-			rowcount = cur.execute(""" SELECT UID FROM searchingrandom WHERE UID != %s LIMIT 1 """,
+			rowcount = cur.execute(""" SELECT UID
+									   FROM searchingrandom
+									   WHERE UID != %s LIMIT 1 """,
 									(userId))
 			data = cur.fetchone()
 			
 			cur.execute(""" DELETE
-							FROM searchingrandom  WHERE UID != %s LIMIT 1 """,
+							FROM searchingrandom
+							WHERE UID != %s LIMIT 1 """,
 							(userId))
 							
 			cur.execute(""" UNLOCK TABLES """)
@@ -229,7 +248,7 @@ if __name__ == '__main__':
 	
 	#print h.newUser("mordi", "mordi@test.com", "sakfjsdaljxifji32jr2fsfjsfs7f7xfsd")
 	#print h.findUserById("1")
-	#print h.findUserByUsername("mordi")
+	print h.findUserByUsername("sfasdfasf")
 	
 	#print h.authenticate("mordi", "sakfjsdaljxifji32jr2fsfjsfs7f7xfsd")
 	#print h.authenticate("", "sakfjsdaljxifji32jr2fsfjsfs7f7xfsd")
@@ -238,7 +257,7 @@ if __name__ == '__main__':
 	
 	#print h.getNewGame('1')
 	
-	print h.postUpdateOnGame('38', '20', 'scored 20 points')
+	#print h.postUpdateOnGame('38', '20', 'scored 20 points')
 	
 	h.con.close()
 	
